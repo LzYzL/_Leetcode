@@ -5,23 +5,26 @@
 
 using namespace std;
 
+
+struct ListNode {
+    int val;
+    ListNode *next;
+    ListNode() : val(0), next(nullptr) {}
+    ListNode(int x) : val(x), next(nullptr) {}
+    ListNode(int x, ListNode *next) : val(x), next(next) {}
+};
+
 class Solution {
     public:
-        ListNode* mergeKLists(vector<ListNode*>& lists);
-    private:
+    // private:
         struct nod {
             int x;
             nod *nex,*pre;
-        };
-        struct ListNode {
-            int val;
-            ListNode *next;
-            ListNode() : val(0), next(nullptr) {}
-            ListNode(int x) : val(x), next(nullptr) {}
-            ListNode(int x, ListNode *next) : val(x), next(next) {}
-        };
+        } *p;
 
-        void Solution::add(nod& p,int x);
+        ListNode* mergeKLists(vector<ListNode*>& lists);
 
-        ListNode* makeln(nod& p,ListNode& ln);
+        void add(int x);
+
+        ListNode* makeln(nod* p,ListNode* ln);
 };
