@@ -7,9 +7,9 @@ PRODUCTION= $(COMMON) -O3
 
 all: driver
 
-driver: driver.cpp solution23.h solution23.cpp
+driver: driver.cpp solution3108.h solution3108.cpp
 	rm -f driver
-	$(CC) driver.cpp solution23.cpp -o driver -g -lm
+	$(CC) driver.cpp solution3108.cpp -o driver -g -lm
 
 run: all
 	./driver 
